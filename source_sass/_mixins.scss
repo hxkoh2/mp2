@@ -1,1 +1,16 @@
 // Insert your mixins
+
+@mixin fit-content {
+	width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+}
+
+@mixin resize ($size) {
+	-webkit-animation: $size 0.5s ease 1 forwards;
+  	-moz-animation: $size 0.5s ease 1 forwards;
+  	-o-animation: $size 0.5s ease 1 forwards;
+  	-ms-animation: $size 0.5s ease 1 forwards;
+  	animation: $size 0.5s ease 1 forwards;
+}
+

@@ -1,7 +1,315 @@
 // Add any custom Sass & CSS here
+@import url(https://fonts.googleapis.com/css?family=Lato|Delius|Special+Elite|Love+Ya+Like+A+Sister|Kranky|Sniglet|Cedarville+Cursive|Sacramento);
 
-body{
-	@include breakpoint(medium down){
-		background: red !important;
+h1 {
+	font-family: $header-font;
+	font-weight: bold;
+	color: $blue;
+	text-align: center;
+}
+
+h2 {
+	font-family: $header-font;
+	font-weight: bold;
+	color: $blue;
+	text-align: center;
+}
+
+h3 {
+	font-weight: bold;
+	color: $mocha;
+	text-align: center;
+}
+
+h4 {
+	font-weight: bold;
+}
+
+p {
+	font-size: 20px;
+	@include breakpoint(medium down) {
+		font-size: 16px;
 	}
+}
+
+.slicknav_menu {
+	display: none;
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	width: 100%;
+	background-color: $aqua;
+	height: 45px;
+
+	@include breakpoint(medium down) {
+		display: block;
+	}
+}
+
+.slicknav_nav {
+	background-color: $aqua;
+
+	a:hover {
+		background-color: rgba(43, 56, 86, 0.4);
+	}
+
+	a:visited, a:link {
+		color: $mocha;
+		font-weight: bold;
+	}
+}
+
+.slicknav_btn {
+	background-color: $blue;
+}
+
+.navbar {
+	position: fixed;
+	background-color: $aqua;
+	z-index: 10;
+	height: $nav-height;
+	width: 100%;
+	opacity: 1;
+	top:0;
+
+	ul {
+		position: relative; 
+		float: right;	
+		height: 100%;
+		margin-right: 10px;
+
+		li {
+			display: inline-block;
+			height: 100%;
+			position: relative;
+			padding-left: 10px;
+			padding-right: 10px;
+			font-size: 18pt;
+			color: $mocha;
+
+			span {
+				top: 50%;
+				transform: translateY(-50%);
+				display: inline-block;
+				position: relative;
+			}
+		}
+
+		li:hover {
+			background-color: rgba(43, 56, 86, 0.4);
+		}
+	}
+
+	@include breakpoint(medium down) {
+		display: none;
+	}
+}
+
+
+#logo {
+	position: absolute; 
+	color: $mocha;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-left: 20px;
+	display: inline;
+	font-size: 30pt;
+}
+
+#logo:hover {
+	cursor: pointer;
+}
+
+.fullpage {
+	width: 100%;
+	position: relative;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.vertical-center {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#homepage {
+	background-color: $cream;
+	height: 100vh;
+
+	img {
+		@include breakpoint(medium down) {
+			width: 50%;
+		}
+	}
+}
+
+#about-us {	
+	img {
+		width: 200px;
+		padding: 10px;
+		@include breakpoint(medium down) {
+			width: 150px;
+		}
+	}
+
+	p {
+		padding: 10px;
+	}
+}
+
+#products {
+	background-image: url('../data/pics/Clouds.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: $blue-light;
+}
+
+.carousel {
+	width: 80%;
+	margin: auto;
+	h3 {
+		text-align: left;
+	}
+	
+	p {
+		margin-bottom: 0px;
+		font-weight: bold;
+	}
+
+	img {
+		width: 90%;
+		height: 400px;
+		//height: 100%;
+		@include breakpoint(medium only) {
+			height: 350px;
+			width: 90%;
+		}
+		@include breakpoint(small down) {
+			height: 300px;
+			width: 90%;
+		}
+	}
+}
+
+
+.slick-prev:before{
+	color: $blue;
+	font-size: 2.0rem;
+}
+
+.slick-next:before {
+	color: $blue;
+	font-size: 2.0rem;
+}
+
+.square {
+	position: relative;
+	width: 100%;
+	height: $square-height;
+	display: inline-block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	z-index: 2;
+	font-size: 30px;
+	color: $mocha;
+	opacity: 1;
+	text-align: center;
+}
+
+.square:hover {
+	cursor: pointer;
+}
+.square-bk {
+	position: relative;
+	z-index: -1;
+	opacity: 0.5;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+}
+
+#projects {
+	span {
+		position: absolute;
+		@include fit-content;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		text-align: center;
+	}
+}
+
+.leaves {
+	background-image: url("../data/pics/Leaves.jpg");
+}
+
+.hearts {
+	background-image: url("../data/pics/Hearts.png");
+}
+
+.colorful {
+	background-image: url("../data/pics/ZigZag.gif");
+}
+
+.modal-pic {
+	height: 350px;
+	width: 350px;
+	@include breakpoint(medium down) {
+		width: 300px;
+		height: 300px;
+	}
+}
+
+#our-cause {
+	background-image: url('../data/pics/Wood.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+
+	p {
+		text-align: center;
+	}
+}
+
+#contact-us {
+	height: $footer-height;
+	background-image: url("../data/pics/Wood.jpg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+i{
+	padding: 10px;
+}
+
+i:hover{
+	color: $mocha;
+}
+
+a:visited,
+a:link{
+	text-decoration: none;	
+	color: black;
+}
+
+.resize-smaller {
+	@include resize(resize-smaller);
+}
+
+.resize-bigger {
+	@include resize(resize-bigger);
+}
+
+@keyframes resize-smaller {
+	0%	 {height: 70px;}
+	100% {height: 45px;}
+}
+
+@keyframes resize-bigger {
+	0%	 {height: 45px;}
+	100% {height: 70px;}
 }
